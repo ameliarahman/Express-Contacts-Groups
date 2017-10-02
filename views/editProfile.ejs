@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="form-input">
+
+        <form action="/profiles/edit/<%=dataRow[0].id %>" method="post">
+            <br> Username:
+            <br>
+            <input type="text" name="username" value="<%=dataRow[0].username %>"> <br> Password:
+            <br>
+            <input type="text" name="password" value="<%=dataRow[0].password %>"><br>
+            <br>
+            <select name="idContact">
+                    <% for(var j=0; j< dataRowContact.length; j++)  {%>
+                <option value=<%= dataRowContact[j].id %> >
+                       
+                        <%= dataRowContact[j].name %>
+                </option>
+                <%}%>
+            </select> <br>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+
+    </div>
+
+</body>
+
+</html>

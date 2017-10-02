@@ -1,0 +1,31 @@
+<html>
+        
+        <head>
+            <link rel="stylesheet" type="text/css" href="style.css">
+            <title>Assign Contacts</title>
+        </head>
+        
+        <body>
+            <header>
+                <h3>Assign Contacts</h3>
+            </header>
+                    <table style="width:80%" border="1">
+        
+                        <tr>
+        
+                            <th>Group</th>
+                           
+                        </tr>
+                        <% for(var i=0; i< dataRow.length; i++)  {%>
+                            <tr>
+                                <td>
+                                    <%=dataRow[i].name_of_group %>
+                                </td>
+                            </tr>
+                            <%}%>
+                    </table>
+                    
+        
+        </body>
+        
+        </html>

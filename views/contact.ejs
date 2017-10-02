@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Contact</title>
+</head>
+
+<body>
+    <header>
+        <h3> Data Contact Management</h3>
+    </header>
+    <div class="menu">
+        <a href="contacts">Contact</a>
+        <a href="groups">Group</a>
+        <a href="profiles">Profile</a>
+        <a href="addresses">Address</a>
+    </div>
+    <div id="main-table">
+
+        <table style="width:80%" border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>No. Telp</th>
+                <th>Email</th>
+                <th>Groups</th>
+                <th colspan="3">Action</th>
+            </tr>
+            <% for(var i=0; i< dataRow.length; i++)  {%>
+                <tr>
+                    <td>
+                        <%=dataRow[i].id %>
+                    </td>
+                    <td>
+                        <%=dataRow[i].name %>
+                    </td>
+                    <td>
+                        <%=dataRow[i].company %>
+                    </td>
+                    <td>
+                        <%=dataRow[i].telp_number %>
+                    </td>
+                    <td>
+                        <%=dataRow[i].email %>
+                    </td>
+                    <td>
+                        <%=dataRow[i].name_of_group %>
+                    </td>
+                    <td>
+                        <a href="/contacts/edit/<%=dataRow[i].id%>">Edit</a>
+                    </td>
+                    <td><a href="/contacts/delete/<%=dataRow[i].id%>">Delete</a></td>
+                    <td>
+                        <a href="/contacts/addresses/<%=dataRow[i].id%>">View Address</a>
+                    </td>
+                </tr>
+                <%}%>
+        </table>
+    </div>
+
+    <div id="form-input">
+        <form action="/contacts" method="post">
+            <br> Name:
+            <br>
+            <input type="text" name="name"> <br> Company:
+            <br>
+            <input type="text" name="company"><br> Telp:
+            <br>
+            <input type="text" name="telp"> <br> Email:
+            <br>
+            <input type="text" name="email"><br>
+            <br>
+            <select name="grouplist">
+                <% for(var j=0; j< dataGroup.length; j++)  {%>
+            <option value=<%= dataGroup[j].id %> >
+                   
+                    <%= dataGroup[j].name_of_group %>
+            </option>
+            <%}%>
+        </select> <br>
+
+            <br> <input type="submit" value="Save">
+        </form>
+
+    </div>
+
+</body>
+
+</html>

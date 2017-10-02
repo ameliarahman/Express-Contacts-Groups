@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="form-input">
+        <form action="/addresses/edit/<%=dataRow[0].id %>" method="post">
+            <br> Street:
+            <br>
+            <input type="text" name="street" value="<%=dataRow[0].street %>"> <br> City:
+            <br>
+            <input type="text" name="city" value="<%=dataRow[0].city %>"><br> Zipcode:
+            <br>
+            <input type="text" name="zipcode" value="<%=dataRow[0].zipcode %>"> <br>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Edit Contact Address</title>
+</head>
+
+<body>
+    <header>
+        <h3>Edit Contact Address</h3>
+    </header>
+    Name :
+    <%= dataRow[0].name %> <br> ID Contact :
+        <%=dataRow[0].id %>
+            <table style="width:80%" border="1">
+
+                <tr>
+
+                    <th>Street</th>
+                    <th>City</th>
+                    <th>Zipcode</th>
+
+                </tr>
+                <% for(var i=0; i< dataRow.length; i++)  {%>
+                    <tr>
+                        <td>
+                            <%=dataRow[i].street %>
+                        </td>
+                        <td>
+                            <%=dataRow[i].city %>
+                        </td>
+                        <td>
+                            <%=dataRow[i].zipcode %>
+                        </td>
+                    </tr>
+                    <%}%>
+            </table>
+            <div id="form-input">
+                <form action="/contacts/addresses/<%=dataRow[0].id %>" method="post">
+                    <br> Street:
+                    <br>
+                    <input type="text" name="street"> <br> City:
+                    <br>
+                    <input type="text" name="city"><br> Zipcode:
+                    <br>
+                    <input type="text" name="zipcode"> <br>
+                    <br>
+                    <input type="text" name="id" value=<%=dataRow[0].id %>> <br>
+                    <br>
+                    <br>
+                    <input type="submit" value="Save">
+                </form>
+
+            </div>
+
+</body>
+
+</html>
