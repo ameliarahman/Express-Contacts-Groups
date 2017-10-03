@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="form-input">
+        <form action="/groups/edit/<%=dataRow[0].id %>" method="post">
+            <br> Name of Group :
+            <br>
+            <input type="text" name="name_of_group" value="<%=dataRow[0].name_of_group %>"> <br>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+
+    </div>
+</body>
+
+</html>

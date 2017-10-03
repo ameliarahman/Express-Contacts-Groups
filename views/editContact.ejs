@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="form-input">
+        <% console.log('asd', dataRow) %>
+        <form action="/contacts/edit/<%= dataRow.id %>" method="post">
+            <br> Name:
+            <br>
+            <input type="text" name="name" value="<%=dataRow.name %>"> <br> Company:
+            <br>
+            <input type="text" name="company" value="<%=dataRow.company %>"><br> Telp:
+            <br>
+            <input type="text" name="telp" value="<%=dataRow.telp_number %>"> <br> Email:
+            <br>
+            <input type="text" name="email" value="<%=dataRow.email%>"><br>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+
+    </div>
+
+</body>
+
+</html>
