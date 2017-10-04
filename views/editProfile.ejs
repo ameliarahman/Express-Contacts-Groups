@@ -6,22 +6,22 @@
 
 <body>
     <div id="form-input">
-
+        <%= message%>
         <form action="/profiles/edit/<%=dataRow[0].id %>" method="post">
             <br> Username:
             <br>
             <input type="text" name="username" value="<%=dataRow[0].username %>"> <br> Password:
             <br>
             <input type="text" name="password" value="<%=dataRow[0].password %>"><br>
-            <br>
-            <select name="idContact">
-                    <% for(var j=0; j< dataRowContact.length; j++)  {%>
-                <option value=<%= dataRowContact[j].id %> >
-                       
-                        <%= dataRowContact[j].name %>
-                </option>
-                <%}%>
-            </select> <br>
+            <select name="contact">
+                    <% for(var i=0; i< dataRowContact.length; i++)  {
+                        if(dataRow[0].idContact == dataRowContact[i].id) {%>
+                        <option name="contact" value= '<%= dataRowContact[i].id%>' selected> <%= dataRowContact[i].name %></option>
+                        <%}else{%>
+                            <option name="contact" value= '<%= dataRowContact[i].id%>'> <%= dataRowContact[i].name %></option>
+                        <%}}%>
+                    
+                </select>
             <br>
             <input type="submit" value="Save">
         </form>

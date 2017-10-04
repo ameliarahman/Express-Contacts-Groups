@@ -6,6 +6,7 @@
 
 <body>
     <div id="form-input">
+        
         <form action="/addresses/edit/<%=dataRow[0].id %>" method="post">
             <br> Street:
             <br>
@@ -15,6 +16,15 @@
             <br>
             <input type="text" name="zipcode" value="<%=dataRow[0].zipcode %>"> <br>
             <br>
+            <select name="contact">
+                    <% for(var i=0; i< dataRowContact.length; i++)  {
+                        if(dataRow[0].idContact == dataRowContact[i].id) {%>
+                        <option name="contact" value= '<%= dataRowContact[i].id%>' selected> <%= dataRowContact[i].name %></option>
+                        <%}else{%>
+                            <option name="contact" value= '<%= dataRowContact[i].id%>'> <%= dataRowContact[i].name %></option>
+                        <%}}%>
+                    
+                </select>
             <input type="submit" value="Save">
         </form>
 

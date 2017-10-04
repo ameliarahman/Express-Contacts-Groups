@@ -66,14 +66,12 @@
             <br>
             <input type="text" name="zipcode"> <br> Contact Name :
             <br>
-            <select name="contactlist"> <br> 
-                    <% for(var j=0; j< dataRowContact.length; j++)  {%>
-                <option value=<%= dataRowContact[j].id %> >
-                       
-                        <%= dataRowContact[j].name %>
-                </option>
-                <%}%>
-            </select> <br>
+            <select name="contact">
+                    <% for(var i=0; i< dataRowContact.length; i++)  {%>
+                        <option name="contact" value= '<%= dataRowContact[i].id%>'> <%= dataRowContact[i].name %></option>
+                        <%}%>
+                    
+                </select> <br>
             <br> <input type="submit" value="Save">
         </form>
 

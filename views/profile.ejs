@@ -7,7 +7,7 @@
 
 <body>
     <header>
-          
+
         <h3>Data Profile Management</h3>
     </header>
     <div class="menu">
@@ -28,6 +28,7 @@
                 <th>Contact Name</th>
                 <th colspan="2">Action</th>
             </tr>
+
             <% for(var i=0; i< dataRow.length; i++)  {%>
                 <tr>
                     <td>
@@ -42,37 +43,40 @@
                     <td>
                         <%=dataRow[i].password %>
                     </td>
+
                     <td>
                         <%=dataRow[i].name %>
-                    </td>
-                    <td>
-                        <a href="/profiles/edit/<%=dataRow[i].id%>">Edit</a>
-                    </td>
-                    <td><a href="/profiles/delete/<%=dataRow[i].id%>">Delete</a></td>
+                            <td>
+                                <a href="/profiles/edit/<%=dataRow[i].id%>">Edit</a>
+                            </td>
+                            <td><a href="/profiles/delete/<%=dataRow[i].id%>">Delete</a></td>
                 </tr>
                 <%}%>
         </table>
     </div>
 
     <div id="form-input">
-       
+
         <form action="/profiles" method="post" id="form-input">
-            <h4>  <%= message %></h4>
+            <h4>
+                <%= message %>
+            </h4>
             <br> Username :
             <br>
             <input type="text" name="username"> <br> Password:
             <br>
             <input type="text" name="password"><br> Contact Name :
             <br>
-            <select name="contactlist">
-                    <% for(var j=0; j< dataRowContact.length; j++)  {%>
-                <option value=<%= dataRowContact[j].id %> >
-                       
-                        <%= dataRowContact[j].name %>
-                </option>
-                <%}%>
-            </select> <br>
-            <br> <input type="submit" value="Save">
+            <select name="contact">
+                    <% for(var i=0; i< dataRowContact.length; i++)  {%>
+                        <option name="contact" value= '<%= dataRowContact[i].id%>'> <%= dataRowContact[i].name %></option>
+                        <%}%>
+                    
+                </select>
+
+            <br>
+            <br> <input type="submit" value="Save"><br>
+
         </form>
 
     </div>
